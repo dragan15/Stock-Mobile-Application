@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+    x:Class="MyStock.StockList">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Black">
+            <Label
+         HeightRequest="50"
+        />
+            <Grid>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="10*"/>
+                     <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                
+                    <Grid Grid.Column="0" Grid.Row="0" Padding="5" Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                           
+                            </Grid.ColumnDefinitions>
+                    
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                    
+                        <Entry
+                            x:Name="GetStock"
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            Grid.ColumnSpan="3"
+                            />
+
+                        <Button
+                            x:Name="GetSock_Clicked"
+                            TextColor="White"
+                            Grid.Column="3"
+                            Grid.Row="0"
+                            Text="Get Stock"
+                            Clicked="HandleGetStock"
+                            />
+                    
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Text="Highest: "
+                            TextColor="White"
+                            />
+                    
+                        <Label
+                            x:Name="highestLabel"
+                            TextColor="White"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Text=""
+                        />
+                    
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Text="Lowest: "
+                            TextColor="White"
+                            />
+                    
+                        <Label
+                            x:Name="lowestLabel"
+                            TextColor="White"
+                            Grid.Row="1"
+                            Grid.Column="3"
+                            Text=""
+                        />
+                    
+             
+  
+                        </Grid>
+                <Label x:Name="ChartBox"
+               VerticalOptions="Center"
+               HorizontalOptions="End"
+               BackgroundColor="Blue"
+                />
+                
+                    <ListView x:Name="historyListView" Grid.Row="1" Grid.Column="0" MinimumHeightRequest="200" HasUnevenRows="true" BackgroundColor="Black">
+                              <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell Height="120">
+                                            <ViewCell.View>
+                                                <Grid Padding="2" Margin="2">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                        </Grid.RowDefinitions>
+                                                 
+                                                         <Label
+                                                            x:Name="dayDateLabel"
+                                                            TextColor="White"
+                                                            Grid.Row="0"
+                                                            Grid.Column="0"
+                                                            Text="{Binding date}"
+                                                            FontSize="Small"
+                                                            />
+                                            
+                                                         <Label
+                                                            Grid.Row="1"
+                                                            TextColor="White"
+                                                            Grid.Column="0"
+                                                            Text="High"
+                                                            FontSize="Small"
+                                                         />
+                                        
+                                                        <Label
+                                                            Grid.Row="1"
+                                                            Grid.Column="1"
+                                                            Text="Low"
+                                                            TextColor="White"
+                                                            FontSize="Small"
+                                                         />
+                                       
+                                                        <Label
+                                                            Grid.Row="1"
+                                                            Grid.Column="2"
+                                                            Text="Close"
+                                                            FontSize="Small"
+                                                            TextColor="White"
+                                                         />
+                                        
+                                                       <Label
+                                                            x:Name="dayHighLabel"
+                                                            Grid.Row="2"
+                                                            Grid.Column="0"
+                                                            Text="{Binding high}"
+                                                            FontSize="Small"
+                                                            TextColor="White"
+                                                         />
+                                        
+                                                        <Label
+                                                            x:Name="dayLowLabel"
+                                                            Grid.Row="2"
+                                                            Grid.Column="1"
+                                                            Text="{Binding low}"
+                                                            FontSize="Small"
+                                                            TextColor="White"
+                                                         />
+                                       
+                                                        <Label
+                                                            x:Name="dayCloseLabel"
+                                                            Grid.Row="2"
+                                                            Grid.Column="2"
+                                                            Text="{Binding close}"
+                                                            FontSize="Small"
+                                                            TextColor="White"
+                                                         />
+                                        
+                                                    </Grid>
+                                                </ViewCell.View>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+             
+                </Grid>
+            <microcharts:ChartView x:Name="ChartView" HeightRequest="250" BackgroundColor="Transparent"/>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

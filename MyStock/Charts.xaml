@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+    x:Class="MyStock.Charts">
+    <ContentPage.Content>
+       <StackLayout BackgroundColor="Black">
+        <Label Text="Chart:" 
+               FontSize="30"
+               FontAttributes="Bold"
+               TextColor="White"
+               HorizontalTextAlignment="Center"/>
+        <Button Text="Generate Chart" 
+                FontSize="15"
+                TextColor="White"
+                BorderWidth="1"
+                BorderRadius="1"
+                BorderColor="#000000"
+                BackgroundColor="Black"
+                Clicked="GenerateChart"/>
+        <microcharts:ChartView x:Name="ChartView" HeightRequest="250" BackgroundColor="Transparent"/>
+        <microcharts:ChartView x:Name="ChartView2" HeightRequest="250" BackgroundColor="Transparent"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
