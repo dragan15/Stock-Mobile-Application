@@ -4,6 +4,8 @@
 
 Submitted by: **Dragan Lukic**
 
+## Tools/Frameworks 
+Alpha Vantage API, Microcharts library, Xamarin Forms
 
 ## Video Walkthrough 
 
