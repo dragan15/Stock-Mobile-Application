@@ -5,12 +5,12 @@
 Submitted by: **Dragan Lukic**
 
 ## Tools/Frameworks 
-Alpha Vantage API, NYTimes Top Storied API, Twitter's PowerTrack API, Microcharts library, Xamarin Forms
-
-## Future Implementations
-AWS Database Integration - Allow users to register and login for the purpose of creating a customized watchlist and forums for the purpose of discussing Stock or investment trends
-
-HelpCenter Feature - guide for the purpose of helping others understand the application
+Alpha Vantage API, Microcharts library, Xamarin Forms
 
 ## Video Walkthrough 
+
+Here's a walkthrough of implemented user stories:
+<img src='https://i.imgur.com/QCjvLFv.gif' title='MyStock' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
